@@ -1,333 +1,891 @@
 /* =========================================================
-   RAYMOND PATUNGAN — PORTFOLIO INTERACTIONS
+   RAYMOND PATUNGAN — SOFTWARE QA ANALYST PORTFOLIO
+   Main JavaScript
    ========================================================= */
 
+document.addEventListener("DOMContentLoaded", () => {
 
-/* ================= MOBILE NAVIGATION ================= */
+    /* =====================================================
+       01. ELEMENT REFERENCES
+       ===================================================== */
 
-const menuToggle = document.getElementById("menuToggle");
-const navMenu = document.getElementById("navMenu");
-const navLinks = document.querySelectorAll(".nav-menu a");
+    const body = document.body;
 
-function toggleMenu() {
-    const isOpen = navMenu.classList.toggle("open");
+    const menuToggle = document.getElementById("menu-toggle");
+    const navMenu = document.getElementById("nav-menu");
 
-    menuToggle.classList.toggle("active", isOpen);
-    menuToggle.setAttribute("aria-expanded", isOpen);
-    document.body.classList.toggle("menu-open", isOpen);
-}
+    const themeToggle = document.getElementById("theme-toggle");
+    const themeIcon = document.getElementById("theme-icon");
+    const themeLabel = document.getElementById("theme-label");
 
-if (menuToggle) {
-    menuToggle.addEventListener("click", toggleMenu);
-}
+    const currentYear = document.getElementById("current-year");
 
-navLinks.forEach(link => {
-    link.addEventListener("click", () => {
-        navMenu.classList.remove("open");
-        menuToggle.classList.remove("active");
-        menuToggle.setAttribute("aria-expanded", "false");
-        document.body.classList.remove("menu-open");
-    });
-});
+    const loginTestButton =
+        document.getElementById("login-test-button");
 
+    const testEmail =
+        document.getElementById("test-email");
 
-/* ================= HEADER ON SCROLL ================= */
-
-const header = document.querySelector(".site-header");
-
-window.addEventListener("scroll", () => {
-    if (window.scrollY > 20) {
-        header.classList.add("scrolled");
-    } else {
-        header.classList.remove("scrolled");
-    }
-}, { passive: true });
+    const testPassword =
+        document.getElementById("test-password");
 
+    const testResult =
+        document.getElementById("test-result");
 
-/* ================= SCROLL REVEAL ================= */
+    const testCaseContent =
+        document.getElementById("test-case-content");
 
-const revealElements = document.querySelectorAll(".reveal");
-
-const revealObserver = new IntersectionObserver(
-    entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
-                revealObserver.unobserve(entry.target);
-            }
-        });
-    },
-    {
-        threshold: 0.12
-    }
-);
 
-revealElements.forEach(element => {
-    revealObserver.observe(element);
-});
+    /* =====================================================
+       02. THEME
+       ===================================================== */
 
+    const THEME_KEY = "raymondPortfolioTheme";
 
-/* ================= ACTIVE NAVIGATION ================= */
+    function getPreferredTheme() {
 
-const sections = document.querySelectorAll("main section[id]");
-const navigationLinks = document.querySelectorAll(".nav-menu a");
+        const savedTheme =
+            localStorage.getItem(THEME_KEY);
 
-const sectionObserver = new IntersectionObserver(
-    entries => {
-        entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-
-                navigationLinks.forEach(link => {
-                    link.classList.remove("active");
-
-                    if (link.getAttribute("href") === `#${entry.target.id}`) {
-                        link.classList.add("active");
-                    }
-                });
-
-            }
-
-        });
-    },
-    {
-        rootMargin: "-30% 0px -60% 0px"
-    }
-);
-
-sections.forEach(section => {
-    sectionObserver.observe(section);
-});
-
-
-/* ================= QA LAB SCENARIOS ================= */
-
-const scenarios = {
-
-    valid: {
-        title: "Valid Login",
-        result: "PASS",
-        precondition: "Registered user account exists.",
-        action: "Enter valid username and password.",
-        expected: "User is authenticated and redirected to dashboard."
-    },
-
-    invalid: {
-        title: "Invalid Password",
-        result: "PASS",
-        precondition: "Registered user account exists.",
-        action: "Enter valid username with an incorrect password.",
-        expected: "Login is rejected and an appropriate error message is displayed."
-    },
-
-    empty: {
-        title: "Empty Credentials",
-        result: "PASS",
-        precondition: "Login page is accessible.",
-        action: "Submit the login form without entering credentials.",
-        expected: "Required-field validation messages are displayed."
-    },
-
-    boundary: {
-        title: "Boundary Input",
-        result: "PASS",
-        precondition: "Username field has a defined maximum length.",
-        action: "Enter input at and beyond the allowed boundary.",
-        expected: "The application correctly handles the boundary condition."
-    }
-
-};
-
-
-const scenarioButtons = document.querySelectorAll(".scenario-btn");
-
-const scenarioTitle = document.getElementById("scenarioTitle");
-const scenarioResult = document.getElementById("scenarioResult");
-const scenarioPrecondition = document.getElementById("scenarioPrecondition");
-const scenarioAction = document.getElementById("scenarioAction");
-const scenarioExpected = document.getElementById("scenarioExpected");
-const scenarioFooter = document.getElementById("scenarioFooter");
-
-
-scenarioButtons.forEach(button => {
-
-    button.addEventListener("click", () => {
-
-        const scenarioName = button.dataset.scenario;
-        const scenario = scenarios[scenarioName];
-
-        if (!scenario) return;
-
-        scenarioButtons.forEach(btn => {
-            btn.classList.remove("active");
-        });
-
-        button.classList.add("active");
-
-        scenarioTitle.textContent = scenario.title;
-        scenarioResult.textContent = scenario.result;
-        scenarioFooter.textContent = scenario.result;
-
-        scenarioPrecondition.textContent = scenario.precondition;
-        scenarioAction.textContent = scenario.action;
-        scenarioExpected.textContent = scenario.expected;
-
-    });
-
-});
-
-
-/* ================= TEST CASE TABS ================= */
-
-const testCases = {
-
-    functional: {
-        title: "Verify successful login with valid credentials",
-        precondition: "A registered user account exists.",
-        steps: "1. Open login page.<br>2. Enter valid username.<br>3. Enter valid password.<br>4. Click Login.",
-        expected: "User is successfully authenticated and redirected to the dashboard."
-    },
-
-    negative: {
-        title: "Verify login rejection with invalid credentials",
-        precondition: "Login page is accessible.",
-        steps: "1. Open login page.<br>2. Enter valid username.<br>3. Enter invalid password.<br>4. Click Login.",
-        expected: "Login is rejected and a clear error message is displayed."
-    },
-
-    boundary: {
-        title: "Verify maximum username input length",
-        precondition: "Username field has a defined maximum length.",
-        steps: "1. Open login page.<br>2. Enter maximum allowed characters.<br>3. Enter one additional character.",
-        expected: "Input is handled according to the defined boundary requirement."
-    },
-
-    regression: {
-        title: "Verify login after authentication-related changes",
-        precondition: "A new application build is available.",
-        steps: "1. Execute existing login regression tests.<br>2. Validate successful login.<br>3. Validate negative scenarios.<br>4. Record results.",
-        expected: "Existing login functionality continues to behave as expected."
-    }
-
-};
-
-
-const testTabs = document.querySelectorAll(".test-tab");
-
-const testCaseTitle = document.getElementById("testCaseTitle");
-const testCasePrecondition = document.getElementById("testCasePrecondition");
-const testCaseSteps = document.getElementById("testCaseSteps");
-const testCaseExpected = document.getElementById("testCaseExpected");
-
-
-testTabs.forEach(tab => {
-
-    tab.addEventListener("click", () => {
-
-        const testName = tab.dataset.tab;
-        const test = testCases[testName];
-
-        if (!test) return;
-
-        testTabs.forEach(item => {
-            item.classList.remove("active");
-        });
-
-        tab.classList.add("active");
-
-        testCaseTitle.textContent = test.title;
-        testCasePrecondition.textContent = test.precondition;
-        testCaseSteps.innerHTML = test.steps;
-        testCaseExpected.textContent = test.expected;
-
-    });
-
-});
-
-
-/* ================= DASHBOARD COUNTERS ================= */
-
-const counters = document.querySelectorAll("[data-count]");
-let countersStarted = false;
-
-function animateCounters() {
-
-    if (countersStarted) return;
-
-    countersStarted = true;
-
-    counters.forEach(counter => {
-
-        const target = Number(counter.dataset.count);
-        const duration = 900;
-        const startTime = performance.now();
-
-        function updateCounter(currentTime) {
-
-            const elapsed = currentTime - startTime;
-            const progress = Math.min(elapsed / duration, 1);
-
-            const easedProgress = 1 - Math.pow(1 - progress, 3);
-
-            counter.textContent =
-                Math.floor(target * easedProgress);
-
-            if (progress < 1) {
-                requestAnimationFrame(updateCounter);
-            } else {
-                counter.textContent = target;
-            }
+        if (
+            savedTheme === "light" ||
+            savedTheme === "dark"
+        ) {
+            return savedTheme;
         }
 
-        requestAnimationFrame(updateCounter);
+        return window.matchMedia(
+            "(prefers-color-scheme: light)"
+        ).matches
+            ? "light"
+            : "dark";
+    }
+
+
+    function applyTheme(theme) {
+
+        const isLight = theme === "light";
+
+        document.documentElement.setAttribute(
+            "data-theme",
+            theme
+        );
+
+        if (themeToggle) {
+            themeToggle.setAttribute(
+                "aria-pressed",
+                String(isLight)
+            );
+
+            themeToggle.setAttribute(
+                "aria-label",
+                isLight
+                    ? "Switch to dark theme"
+                    : "Switch to light theme"
+            );
+        }
+
+        if (themeIcon) {
+            themeIcon.textContent =
+                isLight ? "☾" : "☀";
+        }
+
+        if (themeLabel) {
+            themeLabel.textContent =
+                isLight ? "Dark" : "Light";
+        }
+    }
+
+
+    const initialTheme = getPreferredTheme();
+
+    applyTheme(initialTheme);
+
+
+    if (themeToggle) {
+
+        themeToggle.addEventListener(
+            "click",
+            () => {
+
+                const currentTheme =
+                    document.documentElement.getAttribute(
+                        "data-theme"
+                    ) || "dark";
+
+                const newTheme =
+                    currentTheme === "dark"
+                        ? "light"
+                        : "dark";
+
+                localStorage.setItem(
+                    THEME_KEY,
+                    newTheme
+                );
+
+                applyTheme(newTheme);
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       03. MOBILE NAVIGATION
+       ===================================================== */
+
+    function closeMenu() {
+
+        if (!navMenu || !menuToggle) {
+            return;
+        }
+
+        navMenu.classList.remove("open");
+
+        menuToggle.classList.remove("active");
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+        menuToggle.setAttribute(
+            "aria-label",
+            "Open navigation menu"
+        );
+
+        body.classList.remove("menu-open");
+    }
+
+
+    function toggleMenu() {
+
+        if (!navMenu || !menuToggle) {
+            return;
+        }
+
+        const isOpen =
+            navMenu.classList.toggle("open");
+
+        menuToggle.classList.toggle(
+            "active",
+            isOpen
+        );
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            String(isOpen)
+        );
+
+        menuToggle.setAttribute(
+            "aria-label",
+            isOpen
+                ? "Close navigation menu"
+                : "Open navigation menu"
+        );
+
+        body.classList.toggle(
+            "menu-open",
+            isOpen
+        );
+    }
+
+
+    if (menuToggle) {
+
+        menuToggle.addEventListener(
+            "click",
+            toggleMenu
+        );
+
+    }
+
+
+    /* =====================================================
+       04. CLOSE MENU WHEN NAV LINK IS CLICKED
+       ===================================================== */
+
+    const navLinks =
+        document.querySelectorAll(".nav-link");
+
+
+    navLinks.forEach((link) => {
+
+        link.addEventListener(
+            "click",
+            () => {
+                closeMenu();
+            }
+        );
 
     });
-}
 
 
-const dashboard = document.querySelector(".dashboard");
+    /* =====================================================
+       05. CLOSE MENU WHEN CLICKING OUTSIDE
+       ===================================================== */
 
-if (dashboard) {
+    document.addEventListener(
+        "click",
+        (event) => {
 
-    const dashboardObserver = new IntersectionObserver(
-        entries => {
-
-            if (entries[0].isIntersecting) {
-                animateCounters();
-                dashboardObserver.disconnect();
+            if (!navMenu || !menuToggle) {
+                return;
             }
 
-        },
-        {
-            threshold: 0.25
+            const clickedInsideMenu =
+                navMenu.contains(event.target);
+
+            const clickedMenuButton =
+                menuToggle.contains(event.target);
+
+            if (
+                !clickedInsideMenu &&
+                !clickedMenuButton &&
+                navMenu.classList.contains("open")
+            ) {
+                closeMenu();
+            }
+
         }
     );
 
-    dashboardObserver.observe(dashboard);
 
-}
+    /* =====================================================
+       06. CLOSE MENU WITH ESCAPE
+       ===================================================== */
+
+    document.addEventListener(
+        "keydown",
+        (event) => {
+
+            if (
+                event.key === "Escape" &&
+                navMenu &&
+                navMenu.classList.contains("open")
+            ) {
+                closeMenu();
+
+                if (menuToggle) {
+                    menuToggle.focus();
+                }
+            }
+
+        }
+    );
 
 
-/* ================= CURRENT YEAR ================= */
+    /* =====================================================
+       07. HANDLE DESKTOP RESIZE
+       ===================================================== */
 
-const currentYear = document.getElementById("currentYear");
+    window.addEventListener(
+        "resize",
+        () => {
 
-if (currentYear) {
-    currentYear.textContent = new Date().getFullYear();
-}
+            if (
+                window.innerWidth >= 900 &&
+                navMenu &&
+                navMenu.classList.contains("open")
+            ) {
+                closeMenu();
+            }
+
+        }
+    );
 
 
-/* ================= KEYBOARD ESCAPE ================= */
+    /* =====================================================
+       08. ACTIVE NAVIGATION
+       ===================================================== */
 
-document.addEventListener("keydown", event => {
+    const sections =
+        document.querySelectorAll(
+            "main section[id]"
+        );
 
-    if (event.key === "Escape") {
 
-        navMenu.classList.remove("open");
-        menuToggle.classList.remove("active");
-        menuToggle.setAttribute("aria-expanded", "false");
-        document.body.classList.remove("menu-open");
+    const sectionObserver =
+        new IntersectionObserver(
+            (entries) => {
 
+                entries.forEach((entry) => {
+
+                    if (!entry.isIntersecting) {
+                        return;
+                    }
+
+                    const currentId =
+                        entry.target.getAttribute("id");
+
+                    navLinks.forEach((link) => {
+
+                        const linkTarget =
+                            link.getAttribute("href");
+
+                        link.classList.toggle(
+                            "active",
+                            linkTarget === `#${currentId}`
+                        );
+
+                    });
+
+                });
+
+            },
+            {
+                rootMargin:
+                    "-30% 0px -60% 0px",
+
+                threshold: 0
+            }
+        );
+
+
+    sections.forEach((section) => {
+
+        sectionObserver.observe(section);
+
+    });
+
+
+    /* =====================================================
+       09. SCROLL REVEAL
+       ===================================================== */
+
+    const revealElements =
+        document.querySelectorAll(".reveal");
+
+
+    if (
+        "IntersectionObserver" in window
+    ) {
+
+        const revealObserver =
+            new IntersectionObserver(
+                (entries, observer) => {
+
+                    entries.forEach((entry) => {
+
+                        if (!entry.isIntersecting) {
+                            return;
+                        }
+
+                        entry.target.classList.add(
+                            "visible"
+                        );
+
+                        observer.unobserve(
+                            entry.target
+                        );
+
+                    });
+
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+
+        revealElements.forEach((element) => {
+
+            revealObserver.observe(element);
+
+        });
+
+    } else {
+
+        revealElements.forEach((element) => {
+
+            element.classList.add("visible");
+
+        });
+
+    }
+
+
+    /* =====================================================
+       10. QA LAB — TEST SCENARIOS
+       ===================================================== */
+
+    const scenarioButtons =
+        document.querySelectorAll(
+            ".scenario-button"
+        );
+
+
+    const scenarios = {
+
+        valid: {
+            email: "qa@example.com",
+            password: "Password123",
+            message:
+                "PASS — Valid credentials accepted."
+        },
+
+        invalid: {
+            email: "qa@example.com",
+            password: "wrongpassword",
+            message:
+                "PASS — Invalid credentials rejected."
+        },
+
+        empty: {
+            email: "",
+            password: "",
+            message:
+                "PASS — Empty required fields detected."
+        },
+
+        boundary: {
+            email: "a".repeat(100) + "@example.com",
+            password: "a".repeat(100),
+            message:
+                "CHECK — Boundary input requires validation."
+        }
+
+    };
+
+
+    scenarioButtons.forEach((button) => {
+
+        button.addEventListener(
+            "click",
+            () => {
+
+                scenarioButtons.forEach(
+                    (item) => {
+                        item.classList.remove(
+                            "active"
+                        );
+                    }
+                );
+
+                button.classList.add("active");
+
+                const scenarioName =
+                    button.dataset.scenario;
+
+                const scenario =
+                    scenarios[scenarioName];
+
+                if (!scenario) {
+                    return;
+                }
+
+                if (testEmail) {
+                    testEmail.value =
+                        scenario.email;
+                }
+
+                if (testPassword) {
+                    testPassword.value =
+                        scenario.password;
+                }
+
+                if (testResult) {
+
+                    testResult.textContent =
+                        `Scenario loaded: ${scenario.message}`;
+
+                    testResult.style.color =
+                        scenarioName === "boundary"
+                            ? "var(--warning)"
+                            : "var(--success)";
+                }
+
+            }
+        );
+
+    });
+
+
+    /* =====================================================
+       11. QA LAB — RUN TEST
+       ===================================================== */
+
+    if (loginTestButton) {
+
+        loginTestButton.addEventListener(
+            "click",
+            () => {
+
+                const email =
+                    testEmail
+                        ? testEmail.value.trim()
+                        : "";
+
+                const password =
+                    testPassword
+                        ? testPassword.value
+                        : "";
+
+
+                if (!testResult) {
+                    return;
+                }
+
+
+                /* Empty fields */
+
+                if (!email || !password) {
+
+                    testResult.textContent =
+                        "FAIL — Required fields are empty.";
+
+                    testResult.style.color =
+                        "var(--danger)";
+
+                    return;
+                }
+
+
+                /* Basic email validation */
+
+                const emailPattern =
+                    /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+                if (!emailPattern.test(email)) {
+
+                    testResult.textContent =
+                        "FAIL — Invalid email format.";
+
+                    testResult.style.color =
+                        "var(--danger)";
+
+                    return;
+                }
+
+
+                /* Demo login behavior */
+
+                if (
+                    email === "qa@example.com" &&
+                    password === "Password123"
+                ) {
+
+                    testResult.textContent =
+                        "PASS — Login successful. Dashboard loaded.";
+
+                    testResult.style.color =
+                        "var(--success)";
+
+                    return;
+                }
+
+
+                testResult.textContent =
+                    "PASS — Invalid credentials correctly rejected.";
+
+                testResult.style.color =
+                    "var(--success)";
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       12. TEST CASE TABS
+       ===================================================== */
+
+    const testTabs =
+        document.querySelectorAll(
+            ".test-tab"
+        );
+
+
+    const testCases = {
+
+        positive: {
+            title:
+                "TC-001 — Successful Login",
+
+            steps: [
+                "Open the login page.",
+                "Enter a valid registered email.",
+                "Enter the correct password.",
+                "Click Login."
+            ],
+
+            expected:
+                "User is authenticated and redirected to the dashboard."
+        },
+
+
+        negative: {
+            title:
+                "TC-002 — Invalid Password",
+
+            steps: [
+                "Open the login page.",
+                "Enter a valid registered email.",
+                "Enter an incorrect password.",
+                "Click Login."
+            ],
+
+            expected:
+                "Login is rejected and an appropriate error message is displayed."
+        },
+
+
+        boundary: {
+            title:
+                "TC-003 — Maximum Input Length",
+
+            steps: [
+                "Open the login page.",
+                "Enter the maximum supported email length.",
+                "Enter the maximum supported password length.",
+                "Submit the form."
+            ],
+
+            expected:
+                "The application handles maximum-length input without layout, validation, or processing errors."
+        }
+
+    };
+
+
+    function renderTestCase(type) {
+
+        if (!testCaseContent) {
+            return;
+        }
+
+        const testCase =
+            testCases[type];
+
+        if (!testCase) {
+            return;
+        }
+
+
+        const stepsHTML =
+            testCase.steps
+                .map(
+                    (step, index) =>
+                        `<li>
+                            <span>${index + 1}</span>
+                            ${step}
+                        </li>`
+                )
+                .join("");
+
+
+        testCaseContent.innerHTML = `
+            <div class="test-case-details">
+
+                <span class="mini-label">
+                    TEST CASE
+                </span>
+
+                <h3>
+                    ${testCase.title}
+                </h3>
+
+                <ol>
+                    ${stepsHTML}
+                </ol>
+
+                <div class="test-case-expected">
+
+                    <span class="bug-label">
+                        EXPECTED RESULT
+                    </span>
+
+                    <p>
+                        ${testCase.expected}
+                    </p>
+
+                </div>
+
+            </div>
+        `;
+    }
+
+
+    testTabs.forEach((tab) => {
+
+        tab.addEventListener(
+            "click",
+            () => {
+
+                testTabs.forEach(
+                    (item) => {
+                        item.classList.remove(
+                            "active"
+                        );
+                    }
+                );
+
+                tab.classList.add("active");
+
+                renderTestCase(
+                    tab.dataset.tab
+                );
+
+            }
+        );
+
+    });
+
+
+    /* =====================================================
+       13. QA DASHBOARD COUNTERS
+       ===================================================== */
+
+    const counters =
+        document.querySelectorAll(
+            "[data-counter]"
+        );
+
+
+    function animateCounter(element) {
+
+        const target =
+            Number(
+                element.dataset.counter
+            );
+
+
+        if (
+            !Number.isFinite(target) ||
+            target < 0
+        ) {
+            return;
+        }
+
+
+        const duration = 1000;
+        const startTime = performance.now();
+
+
+        function updateCounter(currentTime) {
+
+            const elapsed =
+                currentTime - startTime;
+
+            const progress =
+                Math.min(
+                    elapsed / duration,
+                    1
+                );
+
+
+            /*
+             * Ease-out animation.
+             */
+
+            const easedProgress =
+                1 -
+                Math.pow(
+                    1 - progress,
+                    3
+                );
+
+
+            const currentValue =
+                Math.round(
+                    target * easedProgress
+                );
+
+
+            element.textContent =
+                currentValue.toLocaleString();
+
+
+            if (progress < 1) {
+
+                requestAnimationFrame(
+                    updateCounter
+                );
+
+            }
+
+        }
+
+
+        requestAnimationFrame(
+            updateCounter
+        );
+    }
+
+
+    if (counters.length > 0) {
+
+        const counterObserver =
+            new IntersectionObserver(
+                (entries, observer) => {
+
+                    entries.forEach((entry) => {
+
+                        if (!entry.isIntersecting) {
+                            return;
+                        }
+
+                        animateCounter(
+                            entry.target
+                        );
+
+                        observer.unobserve(
+                            entry.target
+                        );
+
+                    });
+
+                },
+                {
+                    threshold: 0.4
+                }
+            );
+
+
+        counters.forEach((counter) => {
+
+            counterObserver.observe(counter);
+
+        });
+
+    }
+
+
+    /* =====================================================
+       14. CURRENT YEAR
+       ===================================================== */
+
+    if (currentYear) {
+
+        currentYear.textContent =
+            new Date().getFullYear();
+
+    }
+
+
+    /* =====================================================
+       15. INITIAL TEST CASE
+       ===================================================== */
+
+    renderTestCase("positive");
+
+
+    /* =====================================================
+       16. SAFETY CHECK — MOBILE MENU
+       ===================================================== */
+
+    /*
+     * If the page is loaded directly on desktop,
+     * make sure the mobile menu cannot remain locked
+     * in an unexpected state.
+     */
+
+    if (
+        window.innerWidth >= 900
+    ) {
+        closeMenu();
     }
 
 });
