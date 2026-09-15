@@ -2050,3 +2050,8 @@ input:focus-visible {
     font-size: 0.75rem;
     color: var(--primary);
 }
+.test-case-steps {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
