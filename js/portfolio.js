@@ -687,7 +687,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     ${testCase.title}
                 </h3>
 
-                <ol>
+                <ol class="test-case-steps">
                     ${stepsHTML}
                 </ol>
 
