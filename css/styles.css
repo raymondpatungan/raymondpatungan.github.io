@@ -2025,3 +2025,28 @@ input:focus-visible {
         flex-direction: column;
     }
 }
+/* Test Case Steps */
+.test-case-details ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.test-case-details li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.test-case-details li > span {
+    flex: 0 0 auto;
+    width: 28px;
+    height: 28px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--primary);
+}
