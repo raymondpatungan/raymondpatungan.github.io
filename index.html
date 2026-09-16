@@ -20,229 +20,494 @@
 
     <title>Raymond Patungan | Software QA Analyst</title>
 
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
         rel="stylesheet"
     >
 
-    <!-- Styles -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
 
-    <!-- =========================
-         NAVIGATION
-    ========================== -->
-    <header class="site-header" id="site-header">
+<header class="site-header" id="site-header">
+    <nav class="navbar container" aria-label="Main navigation">
 
-        <nav
-            class="navbar container"
-            aria-label="Main navigation"
+        <a
+            href="#hero"
+            class="nav-logo"
+            aria-label="Raymond Patungan home"
         >
+            <span class="logo-mark">&lt;/&gt;</span>
+            <span class="logo-name">Raymond Patungan</span>
+        </a>
 
-            <a
-                href="#hero"
-                class="nav-logo"
-                aria-label="Raymond Patungan home"
+        <div class="nav-actions">
+
+            <button
+                class="theme-toggle"
+                id="theme-toggle"
+                type="button"
+                aria-label="Switch to light theme"
+                aria-pressed="false"
             >
-                <span class="logo-mark">&lt;/&gt;</span>
-                <span class="logo-name">
-                    Raymond Patungan
+                <span id="theme-icon" aria-hidden="true">☀</span>
+                <span id="theme-label">Light</span>
+            </button>
+
+            <button
+                class="menu-toggle"
+                id="menu-toggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="nav-menu"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+
+        <div class="nav-menu" id="nav-menu">
+
+            <a href="#mindset" class="nav-link">QA Mindset</a>
+            <a href="#testing" class="nav-link">Testing</a>
+            <a href="#qa-lab" class="nav-link">QA Lab</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#automation" class="nav-link">Automation</a>
+            <a href="#experience" class="nav-link">Experience</a>
+            <a href="#contact" class="nav-link">Contact</a>
+
+        </div>
+
+    </nav>
+</header>
+
+
+<main>
+
+    <!-- HERO -->
+    <section class="hero section" id="hero">
+
+        <div class="container hero-grid">
+
+            <div class="hero-content reveal">
+
+                <span class="eyebrow">
+                    SOFTWARE QA ANALYST
                 </span>
-            </a>
 
+                <h1>
+                    I test software
+                    <span class="text-accent">
+                        before users do.
+                    </span>
+                </h1>
 
-            <div class="nav-actions">
+                <p class="hero-description">
+                    Software QA Analyst with 7+ years of experience
+                    across software testing, web and CMS development,
+                    SQL, automation, and business workflows.
+                </p>
 
-                <!-- Theme Toggle -->
-                <button
-                    class="theme-toggle"
-                    id="theme-toggle"
-                    type="button"
-                    aria-label="Switch to light theme"
-                    aria-pressed="false"
-                >
-                    <span
-                        class="theme-icon"
-                        id="theme-icon"
-                        aria-hidden="true"
-                    >☀</span>
+                <div class="hero-actions">
 
-                    <span
-                        class="theme-label"
-                        id="theme-label"
-                    >Light</span>
-                </button>
+                    <a
+                        href="#qa-lab"
+                        class="btn btn-primary"
+                    >
+                        Explore My QA Lab
+                    </a>
 
+                    <a
+                        href="#projects"
+                        class="btn btn-secondary"
+                    >
+                        View My Work
+                    </a>
 
-                <!-- Mobile Menu Toggle -->
-                <button
-                    class="menu-toggle"
-                    id="menu-toggle"
-                    type="button"
-                    aria-label="Open navigation menu"
-                    aria-expanded="false"
-                    aria-controls="nav-menu"
-                >
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+                </div>
 
-            </div>
+                <div class="hero-meta">
 
-
-            <!-- Navigation Menu -->
-            <div
-                class="nav-menu"
-                id="nav-menu"
-            >
-
-                <a
-                    href="#mindset"
-                    class="nav-link"
-                >
-                    QA Mindset
-                </a>
-
-                <a
-                    href="#testing"
-                    class="nav-link"
-                >
-                    Testing
-                </a>
-
-                <a
-                    href="#qa-lab"
-                    class="nav-link"
-                >
-                    QA Lab
-                </a>
-
-                <a
-                    href="#projects"
-                    class="nav-link"
-                >
-                    Projects
-                </a>
-
-                <a
-                    href="#automation"
-                    class="nav-link"
-                >
-                    Automation
-                </a>
-
-                <a
-                    href="#experience"
-                    class="nav-link"
-                >
-                    Experience
-                </a>
-
-                <a
-                    href="#contact"
-                    class="nav-link"
-                >
-                    Contact
-                </a>
-
-            </div>
-
-        </nav>
-
-    </header>
-
-
-    <main>
-
-        <!-- =========================
-             HERO
-        ========================== -->
-        <section
-            class="hero section"
-            id="hero"
-        >
-
-            <div class="container hero-grid">
-
-                <div class="hero-content reveal">
-
-                    <span class="eyebrow">
-                        SOFTWARE QA ANALYST
+                    <span>
+                        <span
+                            class="status-dot"
+                            aria-hidden="true"
+                        ></span>
+                        Open to opportunities
                     </span>
 
-                    <h1>
-                        I test software
-                        <span class="text-accent">
-                            before users do.
-                        </span>
-                    </h1>
+                    <span>Philippines</span>
 
-                    <p class="hero-description">
-                        Software QA Analyst with 7+ years of experience
-                        across software testing, web and CMS development,
-                        SQL, automation, and business workflows.
+                </div>
+
+            </div>
+
+
+            <div class="hero-visual reveal">
+
+                <div class="hero-photo-frame">
+
+                    <img
+                        src="images/raymond-patungan.jpg"
+                        alt="Raymond Patungan"
+                        class="hero-photo"
+                        width="800"
+                        height="1000"
+                        loading="eager"
+                    >
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- QA MINDSET -->
+    <section class="section" id="mindset">
+
+        <div class="container">
+
+            <div class="section-heading reveal">
+
+                <span class="section-label">
+                    01 / QA MINDSET
+                </span>
+
+                <h2>
+                    Quality starts before
+                    the test case.
+                </h2>
+
+                <p>
+                    I approach software from both the user and
+                    technical perspectives — understanding requirements,
+                    challenging assumptions, validating behavior,
+                    and communicating findings clearly.
+                </p>
+
+            </div>
+
+
+            <div class="mindset-grid">
+
+                <article class="mindset-card reveal">
+                    <span class="card-number">01</span>
+                    <h3>Understand</h3>
+                    <p>
+                        Analyze requirements, workflows,
+                        business rules, and expected behavior.
                     </p>
+                </article>
+
+                <article class="mindset-card reveal">
+                    <span class="card-number">02</span>
+                    <h3>Challenge</h3>
+                    <p>
+                        Look beyond the happy path and identify
+                        edge cases, risks, and failure scenarios.
+                    </p>
+                </article>
+
+                <article class="mindset-card reveal">
+                    <span class="card-number">03</span>
+                    <h3>Validate</h3>
+                    <p>
+                        Execute structured tests and compare
+                        actual behavior against expected results.
+                    </p>
+                </article>
+
+                <article class="mindset-card reveal">
+                    <span class="card-number">04</span>
+                    <h3>Communicate</h3>
+                    <p>
+                        Document findings clearly and collaborate
+                        toward reliable solutions and releases.
+                    </p>
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
 
 
-                    <div class="hero-actions">
+    <!-- TESTING -->
+    <section class="section section-alt" id="testing">
 
-                        <a
-                            href="#qa-lab"
-                            class="btn btn-primary"
-                        >
-                            Explore My QA Lab
-                        </a>
+        <div class="container">
 
-                        <a
-                            href="#projects"
-                            class="btn btn-secondary"
-                        >
-                            View My Work
-                        </a>
+            <div class="section-heading reveal">
 
+                <span class="section-label">
+                    02 / TESTING
+                </span>
+
+                <h2>What I test</h2>
+
+                <p>
+                    Testing experience across web applications,
+                    enterprise systems, CMS platforms, APIs,
+                    databases, and business workflows.
+                </p>
+
+            </div>
+
+
+            <div class="testing-grid">
+
+                <article class="testing-card reveal">
+                    <div class="card-icon">QA</div>
+                    <h3>Functional Testing</h3>
+                    <p>
+                        Validate features against requirements,
+                        business rules, and expected behavior.
+                    </p>
+                    <div class="tag-list">
+                        <span>Test Cases</span>
+                        <span>Smoke</span>
+                        <span>Regression</span>
+                    </div>
+                </article>
+
+                <article class="testing-card reveal">
+                    <div class="card-icon">UI</div>
+                    <h3>Web &amp; UI Testing</h3>
+                    <p>
+                        Validate responsive interfaces, browser
+                        behavior, layouts, and cross-browser compatibility.
+                    </p>
+                    <div class="tag-list">
+                        <span>Responsive</span>
+                        <span>Cross-browser</span>
+                        <span>BrowserStack</span>
+                    </div>
+                </article>
+
+                <article class="testing-card reveal">
+                    <div class="card-icon">API</div>
+                    <h3>API Testing</h3>
+                    <p>
+                        Validate requests, responses, status codes,
+                        data, and integration behavior.
+                    </p>
+                    <div class="tag-list">
+                        <span>Postman</span>
+                        <span>JSON</span>
+                        <span>Integration</span>
+                    </div>
+                </article>
+
+                <article class="testing-card reveal">
+                    <div class="card-icon">DB</div>
+                    <h3>Data &amp; SQL Validation</h3>
+                    <p>
+                        Verify application data and database results
+                        using SQL queries and structured validation.
+                    </p>
+                    <div class="tag-list">
+                        <span>MySQL</span>
+                        <span>MSSQL</span>
+                        <span>PostgreSQL</span>
+                    </div>
+                </article>
+
+                <article class="testing-card reveal">
+                    <div class="card-icon">CMS</div>
+                    <h3>CMS Testing</h3>
+                    <p>
+                        Validate WordPress and SDL Tridion websites,
+                        content workflows, layouts, and publishing behavior.
+                    </p>
+                    <div class="tag-list">
+                        <span>WordPress</span>
+                        <span>SDL Tridion</span>
+                        <span>SEO</span>
+                    </div>
+                </article>
+
+                <article class="testing-card reveal">
+                    <div class="card-icon">UAT</div>
+                    <h3>UAT &amp; Business Workflows</h3>
+                    <p>
+                        Validate end-to-end processes from the
+                        perspective of real business requirements.
+                    </p>
+                    <div class="tag-list">
+                        <span>UAT</span>
+                        <span>E2E</span>
+                        <span>Business Rules</span>
+                    </div>
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- QA LAB -->
+    <section class="section" id="qa-lab">
+
+        <div class="container">
+
+            <div class="section-heading reveal">
+
+                <span class="section-label">
+                    03 / TESTING LAB
+                </span>
+
+                <h2>Find the defect.</h2>
+
+                <p>
+                    An interactive login scenario demonstrating
+                    functional testing, negative testing,
+                    and boundary validation.
+                </p>
+
+            </div>
+
+
+            <div class="qa-lab-window reveal">
+
+                <div class="lab-header">
+
+                    <div class="lab-status">
+                        <span
+                            class="status-dot"
+                            aria-hidden="true"
+                        ></span>
+                        QA ENVIRONMENT
                     </div>
 
-
-                    <div class="hero-meta">
-
-                        <span>
-                            <span
-                                class="status-dot"
-                                aria-hidden="true"
-                            ></span>
-
-                            Open to opportunities
-                        </span>
-
-                        <span>
-                            Philippines
-                        </span>
-
-                    </div>
+                    <span class="mono-text">
+                        BUILD #2026.09
+                    </span>
 
                 </div>
 
 
-                <!-- Hero Photo -->
-                <div class="hero-visual reveal">
+                <div class="lab-content">
 
-                    <div class="hero-photo-frame">
+                    <div class="lab-login-panel">
 
-                        <img
-                            src="images/raymond-patungan.jpg"
-                            alt="Raymond Patungan"
-                            class="hero-photo"
-                            width="800"
-                            height="1000"
-                            loading="eager"
+                        <span class="mini-label">
+                            LOGIN MODULE
+                        </span>
+
+                        <h3>Test the login flow</h3>
+
+                        <p>
+                            Select a scenario, inspect the supplied
+                            values, then run the test.
+                        </p>
+
+
+                        <div class="input-group">
+
+                            <label for="test-email">
+                                Email
+                            </label>
+
+                            <input
+                                type="email"
+                                id="test-email"
+                                placeholder="qa@example.com"
+                                autocomplete="off"
+                                maxlength="101"
+                            >
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label for="test-password">
+                                Password
+                            </label>
+
+                            <input
+                                type="password"
+                                id="test-password"
+                                placeholder="••••••••"
+                                autocomplete="off"
+                                maxlength="101"
+                            >
+
+                        </div>
+
+
+                        <button
+                            class="btn btn-primary lab-test-button"
+                            id="login-test-button"
+                            type="button"
                         >
+                            Run Test
+                        </button>
+
+
+                        <div
+                            class="test-result"
+                            id="test-result"
+                            aria-live="polite"
+                        ></div>
+
+                    </div>
+
+
+                    <div class="lab-scenarios">
+
+                        <span class="mini-label">
+                            TEST SCENARIOS
+                        </span>
+
+                        <button
+                            class="scenario-button active"
+                            data-scenario="valid"
+                            type="button"
+                        >
+                            <span>Valid credentials</span>
+                            <span>TC-001</span>
+                        </button>
+
+                        <button
+                            class="scenario-button"
+                            data-scenario="invalid"
+                            type="button"
+                        >
+                            <span>Invalid password</span>
+                            <span>TC-002</span>
+                        </button>
+
+                        <button
+                            class="scenario-button"
+                            data-scenario="empty"
+                            type="button"
+                        >
+                            <span>Empty fields</span>
+                            <span>TC-003</span>
+                        </button>
+
+                        <button
+                            class="scenario-button"
+                            data-scenario="boundary"
+                            type="button"
+                        >
+                            <span>Boundary input</span>
+                            <span>TC-004</span>
+                        </button>
 
                     </div>
 
@@ -250,644 +515,655 @@
 
             </div>
 
-        </section>
+        </div>
+
+    </section>
 
 
-        <!-- =========================
-             QA MINDSET
-        ========================== -->
-        <section
-            class="section"
-            id="mindset"
-        >
+    <!-- BUG REPORT -->
+    <section class="section section-alt" id="bug-reports">
 
-            <div class="container">
+        <div class="container">
 
-                <div class="section-heading reveal">
+            <div class="section-heading reveal">
 
-                    <span class="section-label">
-                        01 / QA MINDSET
+                <span class="section-label">
+                    04 / DEFECT MANAGEMENT
+                </span>
+
+                <h2>A good bug report saves time.</h2>
+
+                <p>
+                    Clear reproduction steps, expected versus actual
+                    results, impact, and useful supporting information.
+                </p>
+
+            </div>
+
+
+            <article class="bug-report reveal">
+
+                <div class="bug-header">
+
+                    <div>
+                        <span class="bug-id">BUG-1042</span>
+
+                        <h3>
+                            Login button remains enabled
+                            with empty credentials
+                        </h3>
+                    </div>
+
+                    <span class="severity-badge">
+                        Medium
                     </span>
 
-                    <h2>
-                        Quality starts before
-                        the test case.
-                    </h2>
+                </div>
+
+
+                <div class="bug-grid">
+
+                    <div>
+                        <span class="bug-label">ENVIRONMENT</span>
+                        <p>Chrome · macOS · QA Environment</p>
+                    </div>
+
+                    <div>
+                        <span class="bug-label">PRECONDITION</span>
+                        <p>Login page is accessible.</p>
+                    </div>
+
+                    <div>
+                        <span class="bug-label">
+                            STEPS TO REPRODUCE
+                        </span>
+
+                        <ol>
+                            <li>Open the login page.</li>
+                            <li>
+                                Leave username and password empty.
+                            </li>
+                            <li>
+                                Observe the Login button.
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div>
+                        <span class="bug-label">EXPECTED</span>
+                        <p>
+                            Login should remain disabled until
+                            required fields are completed.
+                        </p>
+                    </div>
+
+                    <div>
+                        <span class="bug-label">ACTUAL</span>
+                        <p>
+                            Login button remains enabled and
+                            allows submission.
+                        </p>
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- TEST CASE DESIGN -->
+    <section class="section" id="test-case">
+
+        <div class="container">
+
+            <div class="section-heading reveal">
+
+                <span class="section-label">
+                    05 / TEST CASE DESIGN
+                </span>
+
+                <h2>
+                    Structured testing beats random clicking.
+                </h2>
+
+                <p>
+                    Example test case structures covering positive,
+                    negative, and boundary scenarios.
+                </p>
+
+            </div>
+
+
+            <div class="test-case-window reveal">
+
+                <div
+                    class="test-case-tabs"
+                    role="tablist"
+                    aria-label="Test case types"
+                >
+
+                    <button
+                        class="test-tab active"
+                        data-tab="positive"
+                        type="button"
+                        role="tab"
+                        aria-selected="true"
+                    >
+                        Positive
+                    </button>
+
+                    <button
+                        class="test-tab"
+                        data-tab="negative"
+                        type="button"
+                        role="tab"
+                        aria-selected="false"
+                    >
+                        Negative
+                    </button>
+
+                    <button
+                        class="test-tab"
+                        data-tab="boundary"
+                        type="button"
+                        role="tab"
+                        aria-selected="false"
+                    >
+                        Boundary
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="test-case-content"
+                    id="test-case-content"
+                ></div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+    <section class="section section-alt" id="projects">
+
+        <div class="container">
+
+            <div class="section-heading reveal">
+
+                <span class="section-label">
+                    06 / SELECTED WORK
+                </span>
+
+                <h2>More than testing.</h2>
+
+                <p>
+                    My background spans software development, CMS,
+                    automation, data validation, and technical
+                    coordination — giving me a broader view of
+                    how systems are built and maintained.
+                </p>
+
+            </div>
+
+
+            <div class="projects-grid">
+
+                <article class="project-card reveal">
+                    <span class="project-type">
+                        CMS · WEB · QA
+                    </span>
+
+                    <h3>
+                        CMS Development &amp; Quality Validation
+                    </h3>
 
                     <p>
-                        I approach software from both the user and
-                        technical perspectives — understanding requirements,
-                        challenging assumptions, validating behavior, and
-                        communicating findings clearly.
+                        Worked with WordPress and SDL Tridion across
+                        development, maintenance, responsive UI,
+                        content validation, browser compatibility,
+                        and SEO-related requirements.
                     </p>
+
+                    <div class="tag-list">
+                        <span>WordPress</span>
+                        <span>SDL Tridion</span>
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+                </article>
+
+
+                <article class="project-card reveal">
+                    <span class="project-type">
+                        AUTOMATION · BUSINESS PROCESS
+                    </span>
+
+                    <h3>Workflow Automation</h3>
+
+                    <p>
+                        Built and supported business process
+                        automations using Excel VBA, Power Automate,
+                        Power Apps, Make, and Zapier, with attention
+                        to data flow, conditions, exceptions,
+                        and expected outcomes.
+                    </p>
+
+                    <div class="tag-list">
+                        <span>Power Automate</span>
+                        <span>Power Apps</span>
+                        <span>Excel VBA</span>
+                        <span>Make</span>
+                        <span>Zapier</span>
+                    </div>
+                </article>
+
+
+                <article class="project-card reveal">
+                    <span class="project-type">
+                        TEST AUTOMATION
+                    </span>
+
+                    <h3>Automated Regression Testing</h3>
+
+                    <p>
+                        Created and executed automated web test
+                        scenarios using Selenium WebDriver to
+                        support repeatable functional and regression
+                        validation.
+                    </p>
+
+                    <div class="tag-list">
+                        <span>Selenium</span>
+                        <span>Java</span>
+                        <span>Regression</span>
+                        <span>Functional</span>
+                    </div>
+                </article>
+
+
+                <article class="project-card reveal">
+                    <span class="project-type">
+                        DATA · SQL · VALIDATION
+                    </span>
+
+                    <h3>Data &amp; SQL Validation</h3>
+
+                    <p>
+                        Used SQL queries and structured comparisons
+                        to validate application data, database
+                        results, business rules, and data integrity.
+                    </p>
+
+                    <div class="tag-list">
+                        <span>MySQL</span>
+                        <span>MSSQL</span>
+                        <span>PostgreSQL</span>
+                        <span>Data Validation</span>
+                    </div>
+                </article>
+
+
+                <article class="project-card reveal">
+                    <span class="project-type">
+                        SOFTWARE DEVELOPMENT
+                    </span>
+
+                    <h3>Enterprise Application Development</h3>
+
+                    <p>
+                        Developed, maintained, tested, and supported
+                        enterprise applications for HR and financial
+                        systems using Java, COBOL, MySQL, HTML,
+                        JavaScript, and CSS.
+                    </p>
+
+                    <div class="tag-list">
+                        <span>Java</span>
+                        <span>COBOL</span>
+                        <span>MySQL</span>
+                        <span>Web</span>
+                    </div>
+                </article>
+
+
+                <article class="project-card reveal">
+                    <span class="project-type">
+                        REQUIREMENTS · COORDINATION
+                    </span>
+
+                    <h3>Technical Consulting &amp; Coordination</h3>
+
+                    <p>
+                        Worked with clients and technical teams on
+                        requirements clarification, issue resolution,
+                        documentation, knowledge transfer, and
+                        release support.
+                    </p>
+
+                    <div class="tag-list">
+                        <span>Requirements</span>
+                        <span>Coordination</span>
+                        <span>Documentation</span>
+                        <span>Knowledge Transfer</span>
+                    </div>
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- AUTOMATION -->
+    <section class="section" id="automation">
+
+        <div class="container">
+
+            <div class="section-heading reveal">
+
+                <span class="section-label">
+                    07 / AUTOMATION
+                </span>
+
+                <h2>
+                    Automate what should be repeatable.
+                </h2>
+
+                <p>
+                    Automation can reduce repetitive work,
+                    improve consistency, and provide faster feedback.
+                </p>
+
+            </div>
+
+
+            <div class="automation-grid">
+
+                <div class="automation-content reveal">
+
+                    <div class="automation-item">
+                        <span class="automation-number">01</span>
+
+                        <div>
+                            <h3>Selenium WebDriver</h3>
+                            <p>
+                                Automated functional and regression
+                                testing for web applications.
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="automation-item">
+                        <span class="automation-number">02</span>
+
+                        <div>
+                            <h3>Workflow Automation</h3>
+                            <p>
+                                Excel VBA, Power Automate, Power Apps,
+                                Make, and Zapier for business processes.
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="automation-item">
+                        <span class="automation-number">03</span>
+
+                        <div>
+                            <h3>Data Validation</h3>
+                            <p>
+                                SQL and structured checks used to
+                                confirm application and database results.
+                            </p>
+                        </div>
+                    </div>
 
                 </div>
 
 
-                <div class="mindset-grid">
+                <div class="code-window reveal">
 
-                    <article class="mindset-card reveal">
+                    <div class="code-header">
+                        <span>selenium-login.java</span>
+                        <span>TEST AUTOMATION</span>
+                    </div>
 
-                        <span class="card-number">
-                            01
-                        </span>
+                    <pre><code>WebDriver driver =
+    new ChromeDriver();
 
-                        <h3>
-                            Understand
-                        </h3>
+driver.get("/login");
 
-                        <p>
-                            Analyze requirements, workflows,
-                            business rules, and expected behavior.
-                        </p>
+driver.findElement(
+    By.id("username")
+).sendKeys("qa@example.com");
 
-                    </article>
+driver.findElement(
+    By.id("password")
+).sendKeys("Password123");
 
+driver.findElement(
+    By.id("login")
+).click();
 
-                    <article class="mindset-card reveal">
-
-                        <span class="card-number">
-                            02
-                        </span>
-
-                        <h3>
-                            Challenge
-                        </h3>
-
-                        <p>
-                            Look beyond the happy path and identify
-                            edge cases, risks, and failure scenarios.
-                        </p>
-
-                    </article>
-
-
-                    <article class="mindset-card reveal">
-
-                        <span class="card-number">
-                            03
-                        </span>
-
-                        <h3>
-                            Validate
-                        </h3>
-
-                        <p>
-                            Execute structured tests and compare
-                            actual behavior against expected results.
-                        </p>
-
-                    </article>
-
-
-                    <article class="mindset-card reveal">
-
-                        <span class="card-number">
-                            04
-                        </span>
-
-                        <h3>
-                            Communicate
-                        </h3>
-
-                        <p>
-                            Document findings clearly and collaborate
-                            toward reliable solutions and releases.
-                        </p>
-
-                    </article>
+assertEquals(
+    "Dashboard",
+    driver.getTitle()
+);</code></pre>
 
                 </div>
 
             </div>
 
-        </section>
+        </div>
+
+    </section>
 
 
-        <!-- =========================
-             TESTING
-        ========================== -->
-        <section
-            class="section section-alt"
-            id="testing"
-        >
+    <!-- DASHBOARD -->
+    <section class="section section-alt" id="dashboard">
 
-            <div class="container">
+        <div class="container">
 
-                <div class="section-heading reveal">
+            <div class="section-heading reveal">
 
-                    <span class="section-label">
-                        02 / TESTING
-                    </span>
+                <span class="section-label">
+                    08 / QA DASHBOARD
+                </span>
 
-                    <h2>
-                        What I test
-                    </h2>
+                <h2>QA metrics at a glance.</h2>
 
-                    <p>
-                        Testing experience across web applications,
-                        enterprise systems, CMS platforms, APIs,
-                        databases, and business workflows.
-                    </p>
+                <p>
+                    A fictional dashboard demonstrating how
+                    testing results can be summarized and communicated.
+                </p>
 
+                <span class="demo-notice">
+                    DEMO DATA — NOT FROM A REAL PROJECT
+                </span>
+
+            </div>
+
+
+            <div class="dashboard-grid reveal">
+
+                <div class="metric-card">
+                    <span class="metric-label">TEST CASES</span>
+                    <strong
+                        class="metric-value"
+                        data-counter="128"
+                    >0</strong>
+                    <span class="metric-meta">Executed</span>
                 </div>
 
+                <div class="metric-card">
+                    <span class="metric-label">PASSED</span>
+                    <strong
+                        class="metric-value"
+                        data-counter="114"
+                    >0</strong>
+                    <span class="metric-meta">89.1%</span>
+                </div>
 
-                <div class="testing-grid">
+                <div class="metric-card">
+                    <span class="metric-label">FAILED</span>
+                    <strong
+                        class="metric-value"
+                        data-counter="14"
+                    >0</strong>
+                    <span class="metric-meta">
+                        Requires investigation
+                    </span>
+                </div>
 
-                    <article class="testing-card reveal">
+                <div class="metric-card">
+                    <span class="metric-label">DEFECTS</span>
+                    <strong
+                        class="metric-value"
+                        data-counter="9"
+                    >0</strong>
+                    <span class="metric-meta">Logged</span>
+                </div>
 
-                        <div
-                            class="card-icon"
-                            aria-hidden="true"
-                        >
-                            QA
-                        </div>
+            </div>
 
-                        <h3>
-                            Functional Testing
-                        </h3>
+        </div>
+
+    </section>
+
+
+    <!-- EXPERIENCE -->
+    <section class="section" id="experience">
+
+        <div class="container">
+
+            <div class="section-heading reveal">
+
+                <span class="section-label">
+                    09 / EXPERIENCE
+                </span>
+
+                <h2>
+                    Experience behind
+                    the technical perspective.
+                </h2>
+
+                <p>
+                    A background in software engineering and consulting
+                    across development, testing, CMS, automation,
+                    requirements, and technical coordination.
+                </p>
+
+            </div>
+
+
+            <div class="timeline">
+
+                <article class="timeline-item reveal">
+
+                    <div class="timeline-marker">2024</div>
+
+                    <div class="timeline-content">
+
+                        <span class="timeline-date">
+                            APR 2024 — APR 2025
+                        </span>
+
+                        <h3>Software Engineer / Consultant</h3>
+
+                        <h4>
+                            Weserv Systems International Inc.
+                        </h4>
 
                         <p>
-                            Validate features against requirements,
-                            business rules, and expected behavior.
+                            Application development, testing,
+                            maintenance, migration, and validation
+                            for HR and financial systems using COBOL,
+                            Java, MySQL, HTML, JavaScript, and CSS.
                         </p>
 
                         <div class="tag-list">
-                            <span>Test Cases</span>
-                            <span>Smoke</span>
-                            <span>Regression</span>
-                        </div>
-
-                    </article>
-
-
-                    <article class="testing-card reveal">
-
-                        <div
-                            class="card-icon"
-                            aria-hidden="true"
-                        >
-                            UI
-                        </div>
-
-                        <h3>
-                            Web & UI Testing
-                        </h3>
-
-                        <p>
-                            Validate responsive interfaces, browser
-                            behavior, layouts, and cross-browser compatibility.
-                        </p>
-
-                        <div class="tag-list">
-                            <span>Responsive</span>
-                            <span>Cross-browser</span>
-                            <span>BrowserStack</span>
-                        </div>
-
-                    </article>
-
-
-                    <article class="testing-card reveal">
-
-                        <div
-                            class="card-icon"
-                            aria-hidden="true"
-                        >
-                            API
-                        </div>
-
-                        <h3>
-                            API Testing
-                        </h3>
-
-                        <p>
-                            Validate requests, responses, status codes,
-                            data, and integration behavior.
-                        </p>
-
-                        <div class="tag-list">
-                            <span>Postman</span>
-                            <span>JSON</span>
-                            <span>Integration</span>
-                        </div>
-
-                    </article>
-
-
-                    <article class="testing-card reveal">
-
-                        <div
-                            class="card-icon"
-                            aria-hidden="true"
-                        >
-                            DB
-                        </div>
-
-                        <h3>
-                            Data & SQL Validation
-                        </h3>
-
-                        <p>
-                            Verify application data and database results
-                            using SQL queries and structured validation.
-                        </p>
-
-                        <div class="tag-list">
+                            <span>Testing</span>
+                            <span>Java</span>
                             <span>MySQL</span>
-                            <span>MSSQL</span>
-                            <span>PostgreSQL</span>
+                            <span>Automation</span>
                         </div>
 
-                    </article>
+                    </div>
+
+                </article>
 
 
-                    <article class="testing-card reveal">
+                <article class="timeline-item reveal">
 
-                        <div
-                            class="card-icon"
-                            aria-hidden="true"
-                        >
-                            CMS
-                        </div>
+                    <div class="timeline-marker">2023</div>
 
-                        <h3>
-                            CMS Testing
-                        </h3>
+                    <div class="timeline-content">
+
+                        <span class="timeline-date">
+                            APR 2023 — APR 2024
+                        </span>
+
+                        <h3>Software Engineer / Consultant</h3>
+
+                        <h4>Weserv Limited, Japan</h4>
 
                         <p>
-                            Validate WordPress and SDL Tridion websites,
-                            content workflows, layouts, and publishing behavior.
+                            Worked with Japanese clients and counterparts
+                            on requirements clarification, issue resolution,
+                            testing, documentation, release support,
+                            and offshore knowledge transfer.
                         </p>
 
                         <div class="tag-list">
+                            <span>QA</span>
+                            <span>Requirements</span>
+                            <span>Defects</span>
+                            <span>Coordination</span>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article class="timeline-item reveal">
+
+                    <div class="timeline-marker">2017</div>
+
+                    <div class="timeline-content">
+
+                        <span class="timeline-date">
+                            DEC 2017 — APR 2023
+                        </span>
+
+                        <h3>Mid-Level Software Engineer</h3>
+
+                        <h4>
+                            Weserv Systems International Inc.
+                        </h4>
+
+                        <p>
+                            Manual and automated Selenium testing,
+                            functional and regression testing, UAT,
+                            WordPress and SDL Tridion development,
+                            project coordination, and junior team coaching.
+                        </p>
+
+                        <div class="tag-list">
+                            <span>Selenium</span>
+                            <span>UAT</span>
                             <span>WordPress</span>
                             <span>SDL Tridion</span>
-                            <span>SEO</span>
-                        </div>
-
-                    </article>
-
-
-                    <article class="testing-card reveal">
-
-                        <div
-                            class="card-icon"
-                            aria-hidden="true"
-                        >
-                            UAT
-                        </div>
-
-                        <h3>
-                            UAT & Business Workflows
-                        </h3>
-
-                        <p>
-                            Validate end-to-end processes from the
-                            perspective of real business requirements.
-                        </p>
-
-                        <div class="tag-list">
-                            <span>UAT</span>
-                            <span>E2E</span>
-                            <span>Business Rules</span>
-                        </div>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             QA LAB
-        ========================== -->
-        <section
-            class="section"
-            id="qa-lab"
-        >
-
-            <div class="container">
-
-                <div class="section-heading reveal">
-
-                    <span class="section-label">
-                        03 / TESTING LAB
-                    </span>
-
-                    <h2>
-                        Find the defect.
-                    </h2>
-
-                    <p>
-                        An interactive login scenario demonstrating
-                        functional testing, negative testing, and
-                        boundary validation.
-                    </p>
-
-                </div>
-
-
-                <div class="qa-lab-window reveal">
-
-                    <div class="lab-header">
-
-                        <div class="lab-status">
-
-                            <span
-                                class="status-dot"
-                                aria-hidden="true"
-                            ></span>
-
-                            QA ENVIRONMENT
-
-                        </div>
-
-                        <span class="mono-text">
-                            BUILD #2026.09
-                        </span>
-
-                    </div>
-
-
-                    <div class="lab-content">
-
-                        <div class="lab-login-panel">
-
-                            <span class="mini-label">
-                                LOGIN MODULE
-                            </span>
-
-                            <h3>
-                                Test the login flow
-                            </h3>
-
-                            <p>
-                                Try the scenarios below and determine
-                                whether the application behaves correctly.
-                            </p>
-
-
-                            <div class="input-group">
-
-                                <label for="test-email">
-                                    Email
-                                </label>
-
-                                <input
-                                    type="email"
-                                    id="test-email"
-                                    placeholder="qa@example.com"
-                                    autocomplete="off"
-                                >
-
-                            </div>
-
-
-                            <div class="input-group">
-
-                                <label for="test-password">
-                                    Password
-                                </label>
-
-                                <input
-                                    type="password"
-                                    id="test-password"
-                                    placeholder="••••••••"
-                                    autocomplete="off"
-                                >
-
-                            </div>
-
-
-                            <button
-                                class="btn btn-primary lab-test-button"
-                                id="login-test-button"
-                                type="button"
-                            >
-                                Run Test
-                            </button>
-
-
-                            <div
-                                class="test-result"
-                                id="test-result"
-                                aria-live="polite"
-                            ></div>
-
-                        </div>
-
-
-                        <div class="lab-scenarios">
-
-                            <span class="mini-label">
-                                TEST SCENARIOS
-                            </span>
-
-
-                            <button
-                                class="scenario-button"
-                                data-scenario="valid"
-                                type="button"
-                            >
-                                <span>
-                                    Valid credentials
-                                </span>
-
-                                <span>
-                                    TC-001
-                                </span>
-                            </button>
-
-
-                            <button
-                                class="scenario-button"
-                                data-scenario="invalid"
-                                type="button"
-                            >
-                                <span>
-                                    Invalid password
-                                </span>
-
-                                <span>
-                                    TC-002
-                                </span>
-                            </button>
-
-
-                            <button
-                                class="scenario-button"
-                                data-scenario="empty"
-                                type="button"
-                            >
-                                <span>
-                                    Empty fields
-                                </span>
-
-                                <span>
-                                    TC-003
-                                </span>
-                            </button>
-
-
-                            <button
-                                class="scenario-button"
-                                data-scenario="boundary"
-                                type="button"
-                            >
-                                <span>
-                                    Boundary input
-                                </span>
-
-                                <span>
-                                    TC-004
-                                </span>
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             BUG REPORT
-        ========================== -->
-        <section
-            class="section section-alt"
-            id="bug-reports"
-        >
-
-            <div class="container">
-
-                <div class="section-heading reveal">
-
-                    <span class="section-label">
-                        04 / DEFECT MANAGEMENT
-                    </span>
-
-                    <h2>
-                        A good bug report
-                        saves time.
-                    </h2>
-
-                    <p>
-                        Clear reproduction steps, expected versus actual
-                        results, impact, and useful supporting information.
-                    </p>
-
-                </div>
-
-
-                <article class="bug-report reveal">
-
-                    <div class="bug-header">
-
-                        <div>
-
-                            <span class="bug-id">
-                                BUG-1042
-                            </span>
-
-                            <h3>
-                                Login button remains enabled
-                                with empty credentials
-                            </h3>
-
-                        </div>
-
-                        <span class="severity-badge">
-                            Medium
-                        </span>
-
-                    </div>
-
-
-                    <div class="bug-grid">
-
-                        <div>
-
-                            <span class="bug-label">
-                                ENVIRONMENT
-                            </span>
-
-                            <p>
-                                Chrome · macOS · QA Environment
-                            </p>
-
-                        </div>
-
-
-                        <div>
-
-                            <span class="bug-label">
-                                PRECONDITION
-                            </span>
-
-                            <p>
-                                Login page is accessible.
-                            </p>
-
-                        </div>
-
-
-                        <div>
-
-                            <span class="bug-label">
-                                STEPS TO REPRODUCE
-                            </span>
-
-                            <ol>
-                                <li>
-                                    Open the login page.
-                                </li>
-
-                                <li>
-                                    Leave username and password empty.
-                                </li>
-
-                                <li>
-                                    Observe the Login button.
-                                </li>
-                            </ol>
-
-                        </div>
-
-
-                        <div>
-
-                            <span class="bug-label">
-                                EXPECTED
-                            </span>
-
-                            <p>
-                                Login should remain disabled until
-                                required fields are completed.
-                            </p>
-
-                        </div>
-
-
-                        <div>
-
-                            <span class="bug-label">
-                                ACTUAL
-                            </span>
-
-                            <p>
-                                Login button remains enabled and
-                                allows submission.
-                            </p>
-
                         </div>
 
                     </div>
@@ -896,960 +1172,229 @@
 
             </div>
 
-        </section>
+        </div>
+
+    </section>
 
 
-        <!-- =========================
-             TEST CASE DESIGN
-        ========================== -->
-        <section
-            class="section"
-            id="test-case"
-        >
+    <!-- TOOLKIT -->
+    <section class="section section-alt" id="toolkit">
 
-            <div class="container">
+        <div class="container">
 
-                <div class="section-heading reveal">
+            <div class="section-heading reveal">
 
-                    <span class="section-label">
-                        05 / TEST CASE DESIGN
-                    </span>
+                <span class="section-label">
+                    10 / TOOLKIT
+                </span>
 
-                    <h2>
-                        Structured testing
-                        beats random clicking.
-                    </h2>
+                <h2>Tools and technologies.</h2>
 
-                    <p>
-                        Example test case structures covering positive,
-                        negative, and boundary scenarios.
-                    </p>
+                <p>
+                    A practical mix of QA, development, CMS,
+                    data, automation, and collaboration tools.
+                </p>
+
+            </div>
+
+
+            <div class="toolkit-grid reveal">
+
+                <div class="toolkit-group">
+
+                    <h3>Testing &amp; QA</h3>
+
+                    <div class="tool-list">
+                        <span>Selenium WebDriver</span>
+                        <span>Postman</span>
+                        <span>API Testing</span>
+                        <span>UAT</span>
+                        <span>Regression Testing</span>
+                        <span>Functional Testing</span>
+                    </div>
 
                 </div>
 
 
-                <div class="test-case-window reveal">
+                <div class="toolkit-group">
 
-                    <div class="test-case-tabs">
+                    <h3>Development</h3>
 
-                        <button
-                            class="test-tab active"
-                            data-tab="positive"
-                            type="button"
-                        >
-                            Positive
-                        </button>
-
-                        <button
-                            class="test-tab"
-                            data-tab="negative"
-                            type="button"
-                        >
-                            Negative
-                        </button>
-
-                        <button
-                            class="test-tab"
-                            data-tab="boundary"
-                            type="button"
-                        >
-                            Boundary
-                        </button>
-
+                    <div class="tool-list">
+                        <span>Java</span>
+                        <span>JavaScript</span>
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>SQL</span>
+                        <span>Git</span>
                     </div>
 
+                </div>
 
-                    <div
-                        class="test-case-content"
-                        id="test-case-content"
-                    >
-                        <!-- Populated by JavaScript -->
+
+                <div class="toolkit-group">
+
+                    <h3>CMS &amp; Web</h3>
+
+                    <div class="tool-list">
+                        <span>WordPress</span>
+                        <span>SDL Tridion</span>
+                        <span>Elementor</span>
+                        <span>Gutenberg</span>
+                        <span>SEO</span>
+                        <span>Screaming Frog</span>
+                    </div>
+
+                </div>
+
+
+                <div class="toolkit-group">
+
+                    <h3>Automation &amp; Collaboration</h3>
+
+                    <div class="tool-list">
+                        <span>Power Automate</span>
+                        <span>Power Apps</span>
+                        <span>Excel VBA</span>
+                        <span>Jira</span>
+                        <span>Azure DevOps</span>
+                        <span>Slack</span>
                     </div>
 
                 </div>
 
             </div>
 
-        </section>
+        </div>
+
+    </section>
 
 
-        <!-- =========================
-             SELECTED PROJECTS
-        ========================== -->
-        <section
-            class="section section-alt"
-            id="projects"
-        >
+    <!-- CV -->
+    <section class="section cv-section" id="cv">
 
-            <div class="container">
+        <div class="container">
 
-                <div class="section-heading reveal">
+            <div class="cv-card reveal">
+
+                <div>
 
                     <span class="section-label">
-                        06 / SELECTED WORK
+                        CV
                     </span>
 
-                    <h2>
-                        More than testing.
-                    </h2>
+                    <h2>Want the detailed version?</h2>
 
                     <p>
-                        My background spans software development, CMS,
-                        automation, data validation, and technical
-                        coordination — giving me a broader view of how
-                        systems are built and maintained.
+                        Download my CV for a concise overview
+                        of my experience, skills, and background.
                     </p>
 
                 </div>
 
-
-                <div class="projects-grid">
-
-                    <article class="project-card reveal">
-
-                        <span class="project-type">
-                            CMS · WEB · QA
-                        </span>
-
-                        <h3>
-                            CMS Development & Quality Validation
-                        </h3>
-
-                        <p>
-                            Worked with WordPress and SDL Tridion across
-                            development, maintenance, responsive UI,
-                            content validation, browser compatibility,
-                            and SEO-related requirements.
-                        </p>
-
-                        <div class="tag-list">
-                            <span>WordPress</span>
-                            <span>SDL Tridion</span>
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                        </div>
-
-                    </article>
-
-
-                    <article class="project-card reveal">
-
-                        <span class="project-type">
-                            AUTOMATION · BUSINESS PROCESS
-                        </span>
-
-                        <h3>
-                            Workflow Automation
-                        </h3>
-
-                        <p>
-                            Built and supported business process
-                            automations using Excel VBA, Power Automate,
-                            Power Apps, Make, and Zapier, with attention
-                            to data flow, conditions, exceptions, and
-                            expected outcomes.
-                        </p>
-
-                        <div class="tag-list">
-                            <span>Power Automate</span>
-                            <span>Power Apps</span>
-                            <span>Excel VBA</span>
-                            <span>Make</span>
-                            <span>Zapier</span>
-                        </div>
-
-                    </article>
-
-
-                    <article class="project-card reveal">
-
-                        <span class="project-type">
-                            TEST AUTOMATION
-                        </span>
-
-                        <h3>
-                            Automated Regression Testing
-                        </h3>
-
-                        <p>
-                            Created and executed automated web test
-                            scenarios using Selenium WebDriver to
-                            support repeatable functional and regression
-                            validation.
-                        </p>
-
-                        <div class="tag-list">
-                            <span>Selenium</span>
-                            <span>Java</span>
-                            <span>Regression</span>
-                            <span>Functional</span>
-                        </div>
-
-                    </article>
-
-
-                    <article class="project-card reveal">
-
-                        <span class="project-type">
-                            DATA · SQL · VALIDATION
-                        </span>
-
-                        <h3>
-                            Data & SQL Validation
-                        </h3>
-
-                        <p>
-                            Used SQL queries and structured comparisons
-                            to validate application data, database
-                            results, business rules, and data integrity.
-                        </p>
-
-                        <div class="tag-list">
-                            <span>MySQL</span>
-                            <span>MSSQL</span>
-                            <span>PostgreSQL</span>
-                            <span>Data Validation</span>
-                        </div>
-
-                    </article>
-
-
-                    <article class="project-card reveal">
-
-                        <span class="project-type">
-                            SOFTWARE DEVELOPMENT
-                        </span>
-
-                        <h3>
-                            Enterprise Application Development
-                        </h3>
-
-                        <p>
-                            Developed, maintained, tested, and supported
-                            enterprise applications for HR and financial
-                            systems using Java, COBOL, MySQL, HTML,
-                            JavaScript, and CSS.
-                        </p>
-
-                        <div class="tag-list">
-                            <span>Java</span>
-                            <span>COBOL</span>
-                            <span>MySQL</span>
-                            <span>Web</span>
-                        </div>
-
-                    </article>
-
-
-                    <article class="project-card reveal">
-
-                        <span class="project-type">
-                            REQUIREMENTS · COORDINATION
-                        </span>
-
-                        <h3>
-                            Technical Consulting & Coordination
-                        </h3>
-
-                        <p>
-                            Worked with clients and technical teams on
-                            requirements clarification, issue resolution,
-                            documentation, knowledge transfer, and
-                            release support.
-                        </p>
-
-                        <div class="tag-list">
-                            <span>Requirements</span>
-                            <span>Coordination</span>
-                            <span>Documentation</span>
-                            <span>Knowledge Transfer</span>
-                        </div>
-
-                    </article>
-
-                </div>
+                <a
+                    href="documents/Raymond%20Patungan.pdf"
+                    id="cv-link"
+                    class="btn btn-primary"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    Download CV
+                </a>
 
             </div>
 
-        </section>
+        </div>
 
+    </section>
 
-        <!-- =========================
-             AUTOMATION
-        ========================== -->
-        <section
-            class="section"
-            id="automation"
-        >
 
-            <div class="container">
+    <!-- CONTACT -->
+    <section class="section section-alt" id="contact">
 
-                <div class="section-heading reveal">
+        <div class="container">
 
-                    <span class="section-label">
-                        07 / AUTOMATION
-                    </span>
+            <div class="contact-content reveal">
 
-                    <h2>
-                        Automate what
-                        should be repeatable.
-                    </h2>
+                <span class="section-label">
+                    11 / CONTACT
+                </span>
 
-                    <p>
-                        Automation can reduce repetitive work,
-                        improve consistency, and provide faster feedback.
-                    </p>
+                <h2>
+                    Let's talk about what you can build,
+                    test, and improve.
+                </h2>
 
-                </div>
+                <p>
+                    I'm open to opportunities involving software QA,
+                    development, CMS, automation, technical coordination,
+                    and other roles where my broader technical background
+                    can add value.
+                </p>
 
 
-                <div class="automation-grid">
-
-                    <div class="automation-content reveal">
-
-                        <div class="automation-item">
-
-                            <span class="automation-number">
-                                01
-                            </span>
-
-                            <div>
-
-                                <h3>
-                                    Selenium WebDriver
-                                </h3>
-
-                                <p>
-                                    Automated functional and regression
-                                    testing for web applications.
-                                </p>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="automation-item">
-
-                            <span class="automation-number">
-                                02
-                            </span>
-
-                            <div>
-
-                                <h3>
-                                    Workflow Automation
-                                </h3>
-
-                                <p>
-                                    Excel VBA, Power Automate, Power Apps,
-                                    Make, and Zapier for business processes.
-                                </p>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="automation-item">
-
-                            <span class="automation-number">
-                                03
-                            </span>
-
-                            <div>
-
-                                <h3>
-                                    Data Validation
-                                </h3>
-
-                                <p>
-                                    SQL and structured checks used to
-                                    confirm application and database results.
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="code-window reveal">
-
-                        <div class="code-header">
-
-                            <div class="code-dots">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
-
-                            <span>
-                                login_test.java
-                            </span>
-
-                        </div>
-
-
-                        <pre><code><span class="code-keyword">WebDriver</span> driver =
-    <span class="code-keyword">new</span> ChromeDriver();
-
-driver.get(<span class="code-string">"https://example.com/login"</span>);
-
-driver.findElement(
-    By.id(<span class="code-string">"username"</span>)
-).sendKeys(<span class="code-string">"qa@example.com"</span>);
-
-driver.findElement(
-    By.id(<span class="code-string">"password"</span>)
-).sendKeys(<span class="code-string">"password"</span>);
-
-driver.findElement(
-    By.id(<span class="code-string">"login"</span>)
-).click();
-
-assertEquals(
-    <span class="code-string">"Dashboard"</span>,
-    driver.getTitle()
-);</code></pre>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             QA DASHBOARD
-        ========================== -->
-        <section
-            class="section section-alt"
-            id="dashboard"
-        >
-
-            <div class="container">
-
-                <div class="section-heading reveal">
-
-                    <span class="section-label">
-                        08 / QA DASHBOARD
-                    </span>
-
-                    <h2>
-                        QA metrics at a glance.
-                    </h2>
-
-                    <p>
-                        A fictional dashboard demonstrating how
-                        testing results can be summarized and communicated.
-                    </p>
-
-                    <span class="demo-notice">
-                        DEMO DATA — NOT FROM A REAL PROJECT
-                    </span>
-
-                </div>
-
-
-                <div class="dashboard-grid reveal">
-
-                    <div class="metric-card">
-
-                        <span class="metric-label">
-                            TEST CASES
-                        </span>
-
-                        <strong
-                            class="metric-value"
-                            data-counter="128"
-                        >
-                            0
-                        </strong>
-
-                        <span class="metric-meta">
-                            Executed
-                        </span>
-
-                    </div>
-
-
-                    <div class="metric-card">
-
-                        <span class="metric-label">
-                            PASSED
-                        </span>
-
-                        <strong
-                            class="metric-value"
-                            data-counter="114"
-                        >
-                            0
-                        </strong>
-
-                        <span class="metric-meta">
-                            89.1%
-                        </span>
-
-                    </div>
-
-
-                    <div class="metric-card">
-
-                        <span class="metric-label">
-                            FAILED
-                        </span>
-
-                        <strong
-                            class="metric-value"
-                            data-counter="14"
-                        >
-                            0
-                        </strong>
-
-                        <span class="metric-meta">
-                            Requires investigation
-                        </span>
-
-                    </div>
-
-
-                    <div class="metric-card">
-
-                        <span class="metric-label">
-                            DEFECTS
-                        </span>
-
-                        <strong
-                            class="metric-value"
-                            data-counter="9"
-                        >
-                            0
-                        </strong>
-
-                        <span class="metric-meta">
-                            Logged
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             EXPERIENCE
-        ========================== -->
-        <section
-            class="section"
-            id="experience"
-        >
-
-            <div class="container">
-
-                <div class="section-heading reveal">
-
-                    <span class="section-label">
-                        09 / EXPERIENCE
-                    </span>
-
-                    <h2>
-                        Experience behind
-                        the technical perspective.
-                    </h2>
-
-                    <p>
-                        A background in software engineering and consulting
-                        across development, testing, CMS, automation,
-                        requirements, and technical coordination.
-                    </p>
-
-                </div>
-
-
-                <div class="timeline">
-
-                    <article class="timeline-item reveal">
-
-                        <div class="timeline-marker">
-                            2024
-                        </div>
-
-                        <div class="timeline-content">
-
-                            <span class="timeline-date">
-                                APR 2024 — APR 2025
-                            </span>
-
-                            <h3>
-                                Software Engineer / Consultant
-                            </h3>
-
-                            <h4>
-                                Weserv Systems International Inc.
-                            </h4>
-
-                            <p>
-                                Application development, testing, maintenance,
-                                migration, and validation for HR and financial
-                                systems using COBOL, Java, MySQL, HTML,
-                                JavaScript, and CSS.
-                            </p>
-
-                            <div class="tag-list">
-                                <span>Testing</span>
-                                <span>Java</span>
-                                <span>MySQL</span>
-                                <span>Automation</span>
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <article class="timeline-item reveal">
-
-                        <div class="timeline-marker">
-                            2023
-                        </div>
-
-                        <div class="timeline-content">
-
-                            <span class="timeline-date">
-                                APR 2023 — APR 2024
-                            </span>
-
-                            <h3>
-                                Software Engineer / Consultant
-                            </h3>
-
-                            <h4>
-                                Weserv Limited, Japan
-                            </h4>
-
-                            <p>
-                                Worked with Japanese clients and counterparts
-                                on requirements clarification, issue resolution,
-                                testing, documentation, release support, and
-                                offshore knowledge transfer.
-                            </p>
-
-                            <div class="tag-list">
-                                <span>QA</span>
-                                <span>Requirements</span>
-                                <span>Defects</span>
-                                <span>Coordination</span>
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <article class="timeline-item reveal">
-
-                        <div class="timeline-marker">
-                            2017
-                        </div>
-
-                        <div class="timeline-content">
-
-                            <span class="timeline-date">
-                                DEC 2017 — APR 2023
-                            </span>
-
-                            <h3>
-                                Mid-Level Software Engineer
-                            </h3>
-
-                            <h4>
-                                Weserv Systems International Inc.
-                            </h4>
-
-                            <p>
-                                Manual and automated Selenium testing,
-                                functional and regression testing, UAT,
-                                WordPress and SDL Tridion development,
-                                project coordination, and junior team coaching.
-                            </p>
-
-                            <div class="tag-list">
-                                <span>Selenium</span>
-                                <span>UAT</span>
-                                <span>WordPress</span>
-                                <span>SQL</span>
-                            </div>
-
-                        </div>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             TOOLKIT
-        ========================== -->
-        <section
-            class="section section-alt"
-            id="toolkit"
-        >
-
-            <div class="container">
-
-                <div class="section-heading reveal">
-
-                    <span class="section-label">
-                        10 / TOOLKIT
-                    </span>
-
-                    <h2>
-                        Tools and technologies.
-                    </h2>
-
-                    <p>
-                        A practical mix of QA, development, CMS,
-                        data, automation, and collaboration tools.
-                    </p>
-
-                </div>
-
-
-                <div class="toolkit-grid reveal">
-
-                    <div class="toolkit-group">
-
-                        <h3>
-                            Testing & QA
-                        </h3>
-
-                        <div class="tool-list">
-                            <span>Selenium WebDriver</span>
-                            <span>Postman</span>
-                            <span>API Testing</span>
-                            <span>UAT</span>
-                            <span>Regression Testing</span>
-                            <span>Functional Testing</span>
-                        </div>
-
-                    </div>
-
-
-                    <div class="toolkit-group">
-
-                        <h3>
-                            Development
-                        </h3>
-
-                        <div class="tool-list">
-                            <span>Java</span>
-                            <span>JavaScript</span>
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>SQL</span>
-                            <span>Git</span>
-                        </div>
-
-                    </div>
-
-
-                    <div class="toolkit-group">
-
-                        <h3>
-                            CMS & Web
-                        </h3>
-
-                        <div class="tool-list">
-                            <span>WordPress</span>
-                            <span>SDL Tridion</span>
-                            <span>Elementor</span>
-                            <span>Gutenberg</span>
-                            <span>SEO</span>
-                            <span>Screaming Frog</span>
-                        </div>
-
-                    </div>
-
-
-                    <div class="toolkit-group">
-
-                        <h3>
-                            Automation & Collaboration
-                        </h3>
-
-                        <div class="tool-list">
-                            <span>Power Automate</span>
-                            <span>Power Apps</span>
-                            <span>Excel VBA</span>
-                            <span>Jira</span>
-                            <span>Azure DevOps</span>
-                            <span>Slack</span>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             CV
-        ========================== -->
-        <section
-            class="section cv-section"
-            id="cv"
-        >
-
-            <div class="container">
-
-                <div class="cv-card reveal">
-
-                    <div>
-
-                        <span class="section-label">
-                            CV
-                        </span>
-
-                        <h2>
-                            Want the detailed version?
-                        </h2>
-
-                        <p>
-                            Download my CV for a concise overview
-                            of my experience, skills, and background.
-                        </p>
-
-                    </div>
-
+                <div class="contact-actions">
 
                     <a
-                        href="#"
+                        href="mailto:patungan.raymond03@gmail.com"
                         class="btn btn-primary"
-                        id="cv-link"
                     >
-                        Download CV
+                        Email Me
+                    </a>
+
+                    <a
+                        href="https://github.com/raymondpatungan"
+                        class="btn btn-secondary"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        GitHub
                     </a>
 
                 </div>
 
             </div>
 
-        </section>
-
-
-        <!-- =========================
-             CONTACT
-        ========================== -->
-        <section
-            class="section section-alt"
-            id="contact"
-        >
-
-            <div class="container">
-
-                <div class="contact-content reveal">
-
-                    <span class="section-label">
-                        11 / CONTACT
-                    </span>
-
-                    <h2>
-                        Let's talk about what you can build,
-                        test, and improve.
-                    </h2>
-
-                    <p>
-                        I'm open to opportunities involving software QA,
-                        development, CMS, automation, technical coordination,
-                        and other roles where my broader technical background
-                        can add value.
-                    </p>
-
-
-                    <div class="contact-actions">
-
-                        <a
-                            href="mailto:patungan.raymond03@gmail.com"
-                            class="btn btn-primary"
-                        >
-                            Email Me
-                        </a>
-
-
-                        <a
-                            href="https://github.com/raymondpatungan"
-                            class="btn btn-secondary"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            GitHub
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- =========================
-         BACK TO TOP
-    ========================== -->
-    <button
-        class="back-to-top"
-        id="back-to-top"
-        type="button"
-        aria-label="Back to top"
-    >
-        <span aria-hidden="true">↑</span>
-        <span>Back to Top</span>
-    </button>
-
-
-    <!-- =========================
-         FOOTER
-    ========================== -->
-    <footer class="site-footer">
-
-        <div class="container footer-content">
-
-            <p>
-                ©
-                <span id="current-year"></span>
-                Raymond Patungan.
-                Built with HTML, CSS & JavaScript.
-            </p>
-
-            <span class="footer-status">
-                QA mindset. Engineering perspective.
-            </span>
-
         </div>
 
-    </footer>
+    </section>
+
+</main>
 
 
-    <!-- JavaScript -->
-    <script src="js/portfolio.js"></script>
+<!-- BACK TO TOP -->
+<button
+    class="back-to-top"
+    id="back-to-top"
+    type="button"
+    aria-label="Back to top"
+>
+    <span aria-hidden="true">↑</span>
+    <span>Back to Top</span>
+</button>
+
+
+<!-- FOOTER -->
+<footer class="site-footer">
+
+    <div class="container footer-content">
+
+        <p>
+            © <span id="current-year"></span>
+            Raymond Patungan.
+            Built with HTML, CSS &amp; JavaScript.
+        </p>
+
+        <span class="footer-status">
+            QA mindset. Engineering perspective.
+        </span>
+
+    </div>
+
+</footer>
+
+
+<script src="js/portfolio.js"></script>
 
 </body>
 </html>
